@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Lemon</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    *{
+        margin: 2px;
+    }
+    html{
+        height: 100%;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+    .navbar{
+        background-color: black;
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .navbar a{
+       padding: 10px;
+       color: white;
+       text-decoration: none;
+    }
+    .navbar a:hover {
+    text-decoration: underline;
+    }
+    @media screen and (max-width: 768px) {
+            .navbar {
+                font-size:15px ;
+            }
+        }
+        footer {
+            margin-top: 15px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .column1 {
+            flex-basis: 30%;
+        }
+
+        .fa {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 20px;
+            color: #666;
+        }
+    @media screen and (max-width:1200px) {
+           
+            .column1{
+                padding: 1px;
+                font-size: 10px;
+                display: flex;
+                flex-direction: column;
+                width: 30%;
+            }
+            
+        }
+        @media screen and (max-width: 300px) {
+            .row {
+                flex-wrap: wrap;
+            }
+            #icon{
+                padding: 0;
+            }
+            .column1 {
+                flex-basis: 100%;
+                margin-bottom: 10px;
+                padding: 0;
+            }
+        }
+</style>
+<header>
+    <h1  style="color:black;font-size:35x; text-align: center;font-family:Garamond, serif">LITTLE  LEMON</h1>
+    <nav class="navbar">
+       <a href="/">Home</a>
+        <a href="{% url 'menu' %}">Menu</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'reservation' %}">Booking</a> 
+    </nav>
+</header>
+<body>
+    <div style="flex: 1;">
+    {% block body %}
+    {% endblock body %}
+    </div>
+    <footer>
+        <div class="row">
+            <div class="column1">
+                <span id="icon" class="fa fa-map-marker"></span>
+                <br>
+                <span>1,ABC Street
+                    <br>Place-1234
+                </span>
+            </div>
+            <div class="column1">
+                <span id="icon" class="fa fa-phone"></span>
+                <br>
+                <span>Telephone: 12344</span></div>
+            <div class="column1">
+                <span id="icon" class="fa fa-envelope"></span>
+                <br>
+                <span>abc@littlelemon.org</span>
+            </div>
+        </div>
+        <hr>
+        <p style="font-size: 20px;">&copy|All rights are reserved</p>
+    </footer>
+</body>
+</html>

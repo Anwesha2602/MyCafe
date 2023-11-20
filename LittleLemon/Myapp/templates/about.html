@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    @media screen and (max-width: 850px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+    body{
+        background: url('https://cdn.wallpapersafari.com/44/9/eJov0Q.jpg');
+    }
+  </style>
+  <body>
+    {% extends 'base.html' %} {% block body %}
+    <h1>About Us</h1>
+    <span style="display: flex" class="container">
+      <span>
+        <p>
+          "Little Lemon" is a charming restaurant nestled in the heart of a
+          bustling urban landscape, offering a delightful culinary experience
+          that blends innovation with comfort. This culinary gem has captivated
+          patrons with its fusion of fresh, locally sourced ingredients and a
+          menu curated to tantalize diverse palates.
+          <br><div></div>The ambiance at Little
+          Lemon is an artful harmony of modern chic and cozy warmth. Its
+          inviting interiors adorned with tasteful décor and soft lighting
+          create an atmosphere that beckons both casual diners and those seeking
+          a memorable dining affair. The restaurant's commitment to
+          sustainability reflects not only in its farm-to-table ethos but also
+          in its eco-friendly practices. The menu at Little Lemon is a
+          celebration of culinary creativity. From exquisitely crafted seasonal
+          salads to artisanal mains that showcase a fusion of flavors, each dish
+          is a masterpiece. The chefs, renowned for their culinary expertise,
+          present a symphony of tastes that cater to vegetarians, vegans, and
+          omnivores alike. <br><div></div>What sets Little Lemon apart is its dedication to
+          providing not just a meal but an experience—a place where gastronomy
+          meets conviviality, and every bite tells a story. With its dedication
+          to quality, innovation, and community, Little Lemon continues to carve
+          its place as a beloved culinary haven in the city.
+        </p>
+        <div>
+          <details>
+            <summary>Our History</summary>
+            <p>
+                Little Lemon began as a humble dream in a cozy kitchen, where our founders, passionate about flavor and community, crafted recipes that sparkled with freshness. From farmers' markets to a brick-and-mortar haven, our journey has been one of dedication to locally sourced ingredients and inventive dishes. With each plate served, we write a chapter in our history, weaving a tale of culinary innovation, sustainability, and the joy of shared meals. Little Lemon's story is one of growth, rooted in a commitment to offering not just meals but experiences that linger on taste buds and in cherished memories.
+            </p>
+          </details>
+          <details>
+            <summary>Origin</summary>
+            <p>
+                Little Lemon sprouted from a vision to infuse zest into dining. Inspired by a love for fresh, seasonal produce and a passion for inventive cuisine, our founders aimed to create a haven where flavors danced harmoniously. With roots in embracing local ingredients and a commitment to culinary innovation, Little Lemon blossomed into a vibrant culinary destination, offering an experience that celebrates taste, community, and the joy of exceptional dining.
+            </p>
+          </details>
+        </div>
+      </span>
+      <img
+        src="https://media.istockphoto.com/id/503492356/photo/checking-new-menu.jpg?s=612x612&w=0&k=20&c=ZjaL104lcO2WdcLXWXxAJSjp8xDA7N2NUlQ3Ua5LM4g="
+        alt="sorry"
+        style="width: 100%"
+      />
+    </span>
+    {% endblock %}
+  </body>
+</html>

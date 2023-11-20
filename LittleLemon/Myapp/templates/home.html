@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Lemon</title>
+</head>
+<style>
+    .book{
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    .centered{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%; /* Example width for smaller screens */
+        font-size: 25px;
+    }
+    @media screen and (max-width: 768px) {
+            .centered {
+                width: 90%;
+                font-size:14px ;
+            }
+        }
+    .column{
+        float: left;
+        width: 32%;
+        height:100%;
+        /* border: 0.5px solid black; */
+
+    }
+    .container:after {
+        /* width: 100%; */
+        content: "";
+        display: table;
+        clear: both;
+    }
+    @media screen and (max-width: 768px) {
+            .column {
+                width: 100%; 
+            }
+        }
+    .column img{
+        width: 100%;
+        height:50%;
+        margin: 0.5px;
+
+    }
+</style>
+
+{% extends 'base.html' %}
+<body>
+    {% block body %}
+    <div class="book">
+        <img src="https://curlytales.com/wp-content/uploads/2023/05/cover-95-1170x658.jpg" alt="sorry" style="width:100%;height:25vw;" >
+        <div class="centered">
+            <h1>SPECIAL OFFER</h1>
+            <p style="color: white;">30% off this Weekend</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="column">
+            <h1>Our new menu</h1>
+            <img src="https://img.taste.com.au/rLfCKvm4/taste/2016/11/super-easy-greek-salad-81664-1.jpeg" alt="">
+            <p>Introducing our latest culinary marvels at Little Lemon! Delight in a fresh chapter of flavors with our revamped menu, meticulously curated to enchant your palate. Explore an array of innovative dishes that blend seasonal produce with culinary artistry, ensuring each bite is a revelation. From tantalizing starters to indulgent mains and delightful desserts, our new menu invites you to embark on an unforgettable gastronomic journey.</p>
+            <p><a href="{% url 'menu' %}"><b>Click here for Menu</b></a></p>
+        </div>
+        <div class="column">
+            <h1>Book a Table</h1>
+            <img src="https://www.speque.com/Posts/TitleImages/5-advantages-of-a-table-booking-management-system-for-restaurants.jpg" alt="">
+            <p>
+                Secure your seat at Little Lemon's table by reserving now! Indulge in an exquisite dining experience with us by booking ahead. Whether it's an intimate dinner or a gathering with friends, ensure your spot for delightful flavors and memorable moments. Visit our website or call us to make a reservation and embark on a culinary adventure with us. Your table awaits!
+            </p>
+            <p><a href="{% url 'reservation' %}"><b>Click here for reservation</b></a></p>
+        </div>
+        <div class="column">
+            <h1>Opening Hours</h1>
+            <img src="https://t3.ftcdn.net/jpg/02/32/62/58/360_F_232625881_AWlwstfOT14gGx12u0VrdjY1y2S9nbso.jpg" alt="">
+            <p>At Little Lemon, we're dedicated to serving you delectable dishes throughout the week. Join us from Monday to Thursday, 11 AM to 9 PM, and on weekends, we extend our hours from 11 AM to 10 PM on Fridays and Saturdays. Indulge in our culinary delights during these hours and experience the flavors crafted just for you.
+            </p>
+        </div>
+    </div>
+    {% endblock body %}
+</body>
+</html>

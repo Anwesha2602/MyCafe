@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @media screen and (max-width: 768px) {
+            .container{
+               flex-direction: column;
+               /* width: 100%; */
+            }
+        }
+    img{
+        width: 100%;
+        height: 100%; /* Set the image size to match the container size */
+        object-fit: cover; /* Scale the image to cover the entire container while preserving aspect ratio */
+        }
+
+</style>
+<body>
+    {% extends 'base.html' %}
+    {% block body %}
+    <div style="display: flex;" class="container">
+        <div>
+            <h1 style="font-size: 40px; font-family: Arial, Helvetica, sans-serif;">{{menu_item.name}}</h1>
+            <p style="font-size: 20px;">{{menu_item.desc}}</p>
+            <p style="font-size: 15px;">Price:${{menu_item.price}}.00</p>
+        </div>
+        <div><img src="{{menu_item.img}}" alt=""></div>
+    </div>
+    {% endblock body %}
+</body>
+</html>

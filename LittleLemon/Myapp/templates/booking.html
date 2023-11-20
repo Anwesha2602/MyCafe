@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <style>
+    @media screen and (max-width: 768px) {
+            .details {
+                flex-direction: column ;
+            }
+            form{
+                background-size: contain;
+            }
+        }
+    form{
+        /* background-image: url(https://i.pinimg.com/originals/eb/eb/a8/ebeba800c31bcef2ac726379286f9464.jpg); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* color:white; */
+    }
+    .details p {
+        display: flex;
+        align-items: center;
+    }
+    .details label {
+        margin-right: 10px;
+        font-size: 20px;
+        margin: 10px;
+    }
+</style> -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        /* background-color: #9a9898; */
+        background-image: url(https://wallpaperaccess.com/full/1703914.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    label {
+        font-weight: bold;
+        color: #444;
+    }
+
+    .details {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin: 5px 0;
+    }
+
+    ul {
+        padding-left: 20px;
+        color: #666;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    /* Additional styles for responsiveness */
+    @media screen and (max-width: 480px) {
+        form {
+            width: 90%;
+        }
+    }
+</style>
+
+
+<body>
+    {% extends 'base.html' %}
+    {% block body %}
+    <!-- displaying error -->
+        {% if messages %}
+            <!-- {% for message in messages %} -->
+                <div class="alert alert-danger" style="text-align: center; color: red; font-family: Georgia, 'Times New Roman', Times, serif;" >
+                    {{ message }}
+                </div>
+            <!-- {% endfor %} -->
+        {% endif %}
+    
+    <form action="" method="POST">
+
+        {% csrf_token %}
+        <h1>Reserve a Table</h1>
+        <br>
+        <div><h2><i><b>Personal Details</b></i></h2>
+            <div class="details">
+                <p><label>Name:</label>{{form.name}}</p>
+                <p><label>Contact No:</label>{{form.phone_no}}</p>
+                <p><label>Email address:</label>{{form.email}}</p>
+            </div>
+        </div>
+        <div>
+            <h2><i><b>Booking Details</b></i></h2>
+            <div class="details"> 
+                <p><label>People:</label>
+                    {{form.table}}
+                    </p>
+                <p><label>Date:</label>
+                    {{form.date}}
+                </p>
+                <p><label>Time:</label>
+                    {{form.time}}
+                </p>
+            </div>
+        </div>
+        <div>
+            <p>Terms and conditions</p>
+        <ul>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, repellat.</li>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis et, labore dolore quibusdam sed libero laudantium! Officiis in perferendis tempora.</li>
+        </ul>
+        <input type="checkbox" required="True">Agree to terms and conditions</div>
+        <div>
+            <input type="submit" name="submit" >
+        </div>
+    </form>
+    {% endblock body%}
+</body>
+</html>
+

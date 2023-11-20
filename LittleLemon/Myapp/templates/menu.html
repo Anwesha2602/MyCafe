@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-image:url('https://img.freepik.com/free-vector/yellow-lemon-background_53876-93597.jpg?w=2000');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.container p {
+    font-size: 16px;
+}
+
+.menu-image {
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+}
+</style>
+<body>
+    {% extends 'base.html' %}
+    {% block body %}
+    <div>
+    <h1><i><b>Menu</b></i></h1>
+    <p>
+        Savor a culinary journey at Little Lemon, where our menu harmonizes vibrant flavors with locally sourced, seasonal ingredients. From innovative salads to delectable mains, each dish is a celebration of taste and creativity, inviting you to indulge in a symphony of flavors crafted with passion and care.
+    </p>
+    </div>
+        {% if menu %}
+        {%for item in menu%}
+        <div class="container">
+                <a href="{% url 'menu_item' pk=item.pk %}">{{item.name}}</a>
+                <p>${{item.price}}.00</p>
+                <img src="{{item.img}}" alt="sorry" style="width: 100px;">   
+        </div> 
+         {% endfor %}
+        {% endif %}
+    {% endblock %}
+</body>
+</html>
